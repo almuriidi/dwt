@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DWT Travel & Cargo</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#f4f4f4;}
+
+header{background:#b30000;color:white;padding:15px;text-align:center;}
+.logo{width:120px;}
+
+nav{background:#222;text-align:center;padding:10px;}
+nav a{color:white;margin:10px;text-decoration:none;}
+
+.hero{
+background:url('https://images.unsplash.com/photo-1502920917128-1aa500764cbd') no-repeat center/cover;
+color:white;padding:80px 20px;text-align:center;}
+
+section{padding:40px;text-align:center;}
+
+.services{display:flex;flex-wrap:wrap;justify-content:center;}
+.card{background:white;padding:20px;margin:10px;border-radius:10px;width:250px;}
+
+.card img{width:100%;border-radius:10px;}
+
+form{background:white;padding:20px;border-radius:10px;max-width:500px;margin:auto;}
+
+input,select,textarea{width:100%;padding:10px;margin:10px 0;}
+
+button{background:#b30000;color:white;padding:12px;border:none;width:100%;cursor:pointer;}
+
+.whatsapp{background:green;margin-bottom:10px;}
+
+footer{background:#222;color:white;text-align:center;padding:20px;}
+
+@media(max-width:768px){
+.services{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="logo.jpg" class="logo">
+<h2>Dhaqane World Travel & Cargo</h2>
+<p>Ticket • Cargo • Visa Services</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#booking">Booking</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero" id="home">
+<h1>Travel Anywhere With Us</h1>
+<p>Fast, Safe & Affordable Services</p>
+</div>
+
+<section id="services">
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1494412574643-ff3b8b2b9c8a">
+<h3>✈️ Flight Ticket</h3>
+<p>Best prices for international & local flights</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d">
+<h3>📦 Cargo</h3>
+<p>Fast and secure cargo shipping worldwide</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216">
+<h3>🛂 Visa Help</h3>
+<p>We assist you with visa applications</p>
+</div>
+
+</div>
+</section>
+
+<section id="booking">
+<h2>Book Now</h2>
+
+<button class="whatsapp"
+onclick="window.location.href='https://wa.me/254798546265'">
+Chat WhatsApp
+</button>
+
+<form id="bookingForm">
+
+<input type="text" id="name" placeholder="Full Name" required>
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<select id="service">
+<option>Flight Ticket</option>
+<option>Cargo Service</option>
+<option>Visa Help</option>
+</select>
+
+<input type="text" id="from" placeholder="From (City)" required>
+<input type="text" id="to" placeholder="To (City)" required>
+<input type="date" id="date" required>
+
+<textarea id="details" placeholder="Extra Details"></textarea>
+
+<button type="submit">Send Booking via WhatsApp</button>
+
+</form>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p>📞 0721451767</p>
+<p>📍 Nairobi, Kenya</p>
+</section>
+
+<footer>
+<p>© 2026 DWT Travel & Cargo Agency</p>
+</footer>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let service = document.getElementById("service").value;
+let from = document.getElementById("from").value;
+let to = document.getElementById("to").value;
+let date = document.getElementById("date").value;
+let details = document.getElementById("details").value;
+
+let message =
+`✈️ NEW BOOKING REQUEST
+Name: ${name}
+Phone: ${phone}
+Service: ${service}
+From: ${from}
+To: ${to}
+Date: ${date}
+Details: ${details}`;
+
+let url = "https://wa.me/254721451767?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank");
+});
+</script>
+
+</body>
+</html>
